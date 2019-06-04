@@ -59,8 +59,7 @@ class Tarball::Header
   macro string_field(field_name, header_format)
     @{{field_name.id}} : String?
     
-    {{ "# Returns **#{field_name.id}** field in this header.".id }}
-    {% if header_format.id != :common %}{{ "# (#{header_format.upcase.id} format)".id }}{% end %}
+    {{ "# Returns **#{field_name.id}** field in this header.".id }}{% if header_format.id != :common %}{{ "(#{header_format.upcase.id} format)".id }}{% end %}
     def {{field_name.id}} : String
       @{{field_name.id}} ||= as_string({{header_format.id}}_data(:{{field_name.id}}))
     end
@@ -69,8 +68,7 @@ class Tarball::Header
   macro number_field(field_name, header_format)
     @{{field_name.id}} : UInt64?
     
-    {{ "# Returns **#{field_name.id}** field in this header.".id }}
-    {% if header_format.id != :common %}{{ "# (#{header_format.upcase.id} format)".id }}{% end %}
+    {{ "# Returns **#{field_name.id}** field in this header.".id }}{% if header_format.id != :common %}{{ "(#{header_format.upcase.id} format)".id }}{% end %}
     def {{field_name.id}} : UInt64
       @{{field_name.id}} ||= as_number({{header_format.id}}_data(:{{field_name.id}}))
     end
@@ -79,8 +77,7 @@ class Tarball::Header
   macro time_field(field_name, header_format)
     @{{field_name.id}} : Time?
     
-    {{ "# Returns **#{field_name.id}** field in this header.".id }}
-    {% if header_format.id != :common %}{{ "# (#{header_format.upcase.id} format)".id }}{% end %}
+    {{ "# Returns **#{field_name.id}** field in this header.".id }}{% if header_format.id != :common %}{{ "(#{header_format.upcase.id} format)".id }}{% end %}
     def {{field_name.id}} : Time
       @{{field_name.id}} ||= as_time({{header_format.id}}_data(:{{field_name.id}}))
     end

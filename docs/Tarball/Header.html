@@ -120,7 +120,7 @@
   <h2>Defined in:</h2>
   
     
-      <a href="https://github.com/arcage/tarball.cr/blob/0c3cf0c65d99a93cfaf59aec2ed16af353520e68/src/tarball/header.cr#L2" target="_blank">
+      <a href="https://github.com/arcage/tarball.cr/blob/6e8b4754b680c4000eb8d3f36868de6a1107c397/src/tarball/header.cr#L2" target="_blank">
         tarball/header.cr
       </a>
     
@@ -153,7 +153,7 @@
       <li class="entry-summary">
         <a href="#atime%3ATime-instance-method" class="signature"><strong>#atime</strong> : Time</a>
         
-          <div class="summary"><p>Returns <strong>atime</strong> field in this header.</p></div>
+          <div class="summary"><p>Returns <strong>atime</strong> field in this header.(GNUTAR format)</p></div>
         
       </li>
     
@@ -174,21 +174,21 @@
       <li class="entry-summary">
         <a href="#ctime%3ATime-instance-method" class="signature"><strong>#ctime</strong> : Time</a>
         
-          <div class="summary"><p>Returns <strong>ctime</strong> field in this header.</p></div>
+          <div class="summary"><p>Returns <strong>ctime</strong> field in this header.(GNUTAR format)</p></div>
         
       </li>
     
       <li class="entry-summary">
         <a href="#devmajor%3AUInt64-instance-method" class="signature"><strong>#devmajor</strong> : UInt64</a>
         
-          <div class="summary"><p>Returns <strong>devmajor</strong> field in this header.</p></div>
+          <div class="summary"><p>Returns <strong>devmajor</strong> field in this header.(USTAR format)</p></div>
         
       </li>
     
       <li class="entry-summary">
         <a href="#devminor%3AUInt64-instance-method" class="signature"><strong>#devminor</strong> : UInt64</a>
         
-          <div class="summary"><p>Returns <strong>devminor</strong> field in this header.</p></div>
+          <div class="summary"><p>Returns <strong>devminor</strong> field in this header.(USTAR format)</p></div>
         
       </li>
     
@@ -202,7 +202,7 @@
       <li class="entry-summary">
         <a href="#gname%3AString-instance-method" class="signature"><strong>#gname</strong> : String</a>
         
-          <div class="summary"><p>Returns <strong>gname</strong> field in this header.</p></div>
+          <div class="summary"><p>Returns <strong>gname</strong> field in this header.(USTAR format)</p></div>
         
       </li>
     
@@ -258,7 +258,7 @@
       <li class="entry-summary">
         <a href="#offset%3AUInt64-instance-method" class="signature"><strong>#offset</strong> : UInt64</a>
         
-          <div class="summary"><p>Returns <strong>offset</strong> field in this header.</p></div>
+          <div class="summary"><p>Returns <strong>offset</strong> field in this header.(GNUTAR format)</p></div>
         
       </li>
     
@@ -272,14 +272,14 @@
       <li class="entry-summary">
         <a href="#prefix%3AString-instance-method" class="signature"><strong>#prefix</strong> : String</a>
         
-          <div class="summary"><p>Returns <strong>prefix</strong> field in this header.</p></div>
+          <div class="summary"><p>Returns <strong>prefix</strong> field in this header.(POSIX format)</p></div>
         
       </li>
     
       <li class="entry-summary">
         <a href="#realsize%3AUInt64-instance-method" class="signature"><strong>#realsize</strong> : UInt64</a>
         
-          <div class="summary"><p>Returns <strong>realsize</strong> field in this header.</p></div>
+          <div class="summary"><p>Returns <strong>realsize</strong> field in this header.(GNUTAR format)</p></div>
         
       </li>
     
@@ -314,7 +314,7 @@
       <li class="entry-summary">
         <a href="#uname%3AString-instance-method" class="signature"><strong>#uname</strong> : String</a>
         
-          <div class="summary"><p>Returns <strong>uname</strong> field in this header.</p></div>
+          <div class="summary"><p>Returns <strong>uname</strong> field in this header.(USTAR format)</p></div>
         
       </li>
     
@@ -328,7 +328,7 @@
       <li class="entry-summary">
         <a href="#version%3AString-instance-method" class="signature"><strong>#version</strong> : String</a>
         
-          <div class="summary"><p>Returns <strong>version</strong> field in this header.</p></div>
+          <div class="summary"><p>Returns <strong>version</strong> field in this header.(USTAR format)</p></div>
         
       </li>
     
@@ -400,7 +400,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/arcage/tarball.cr/blob/0c3cf0c65d99a93cfaf59aec2ed16af353520e68/src/tarball/header.cr#L54" target="_blank">View source</a>]
+          [<a href="https://github.com/arcage/tarball.cr/blob/6e8b4754b680c4000eb8d3f36868de6a1107c397/src/tarball/header.cr#L54" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -420,13 +420,12 @@
         <a class="method-permalink" href="#atime%3ATime-instance-method">#</a>
       </div>
       
-        <div class="doc"><p>Returns <strong>atime</strong> field in this header.
-(GNUTAR format)</p></div>
+        <div class="doc"><p>Returns <strong>atime</strong> field in this header.(GNUTAR format)</p></div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/arcage/tarball.cr/blob/0c3cf0c65d99a93cfaf59aec2ed16af353520e68/src/tarball/header.cr#L107" target="_blank">View source</a>]
+          [<a href="https://github.com/arcage/tarball.cr/blob/6e8b4754b680c4000eb8d3f36868de6a1107c397/src/tarball/header.cr#L104" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -444,7 +443,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/arcage/tarball.cr/blob/0c3cf0c65d99a93cfaf59aec2ed16af353520e68/src/tarball/header.cr#L95" target="_blank">View source</a>]
+          [<a href="https://github.com/arcage/tarball.cr/blob/6e8b4754b680c4000eb8d3f36868de6a1107c397/src/tarball/header.cr#L92" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -462,7 +461,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/arcage/tarball.cr/blob/0c3cf0c65d99a93cfaf59aec2ed16af353520e68/src/tarball/header.cr#L170" target="_blank">View source</a>]
+          [<a href="https://github.com/arcage/tarball.cr/blob/6e8b4754b680c4000eb8d3f36868de6a1107c397/src/tarball/header.cr#L167" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -475,13 +474,12 @@
         <a class="method-permalink" href="#ctime%3ATime-instance-method">#</a>
       </div>
       
-        <div class="doc"><p>Returns <strong>ctime</strong> field in this header.
-(GNUTAR format)</p></div>
+        <div class="doc"><p>Returns <strong>ctime</strong> field in this header.(GNUTAR format)</p></div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/arcage/tarball.cr/blob/0c3cf0c65d99a93cfaf59aec2ed16af353520e68/src/tarball/header.cr#L108" target="_blank">View source</a>]
+          [<a href="https://github.com/arcage/tarball.cr/blob/6e8b4754b680c4000eb8d3f36868de6a1107c397/src/tarball/header.cr#L105" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -494,13 +492,12 @@
         <a class="method-permalink" href="#devmajor%3AUInt64-instance-method">#</a>
       </div>
       
-        <div class="doc"><p>Returns <strong>devmajor</strong> field in this header.
-(USTAR format)</p></div>
+        <div class="doc"><p>Returns <strong>devmajor</strong> field in this header.(USTAR format)</p></div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/arcage/tarball.cr/blob/0c3cf0c65d99a93cfaf59aec2ed16af353520e68/src/tarball/header.cr#L102" target="_blank">View source</a>]
+          [<a href="https://github.com/arcage/tarball.cr/blob/6e8b4754b680c4000eb8d3f36868de6a1107c397/src/tarball/header.cr#L99" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -513,13 +510,12 @@
         <a class="method-permalink" href="#devminor%3AUInt64-instance-method">#</a>
       </div>
       
-        <div class="doc"><p>Returns <strong>devminor</strong> field in this header.
-(USTAR format)</p></div>
+        <div class="doc"><p>Returns <strong>devminor</strong> field in this header.(USTAR format)</p></div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/arcage/tarball.cr/blob/0c3cf0c65d99a93cfaf59aec2ed16af353520e68/src/tarball/header.cr#L103" target="_blank">View source</a>]
+          [<a href="https://github.com/arcage/tarball.cr/blob/6e8b4754b680c4000eb8d3f36868de6a1107c397/src/tarball/header.cr#L100" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -537,7 +533,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/arcage/tarball.cr/blob/0c3cf0c65d99a93cfaf59aec2ed16af353520e68/src/tarball/header.cr#L92" target="_blank">View source</a>]
+          [<a href="https://github.com/arcage/tarball.cr/blob/6e8b4754b680c4000eb8d3f36868de6a1107c397/src/tarball/header.cr#L89" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -550,13 +546,12 @@
         <a class="method-permalink" href="#gname%3AString-instance-method">#</a>
       </div>
       
-        <div class="doc"><p>Returns <strong>gname</strong> field in this header.
-(USTAR format)</p></div>
+        <div class="doc"><p>Returns <strong>gname</strong> field in this header.(USTAR format)</p></div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/arcage/tarball.cr/blob/0c3cf0c65d99a93cfaf59aec2ed16af353520e68/src/tarball/header.cr#L101" target="_blank">View source</a>]
+          [<a href="https://github.com/arcage/tarball.cr/blob/6e8b4754b680c4000eb8d3f36868de6a1107c397/src/tarball/header.cr#L98" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -574,7 +569,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/arcage/tarball.cr/blob/0c3cf0c65d99a93cfaf59aec2ed16af353520e68/src/tarball/header.cr#L205" target="_blank">View source</a>]
+          [<a href="https://github.com/arcage/tarball.cr/blob/6e8b4754b680c4000eb8d3f36868de6a1107c397/src/tarball/header.cr#L202" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -592,7 +587,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/arcage/tarball.cr/blob/0c3cf0c65d99a93cfaf59aec2ed16af353520e68/src/tarball/header.cr#L127" target="_blank">View source</a>]
+          [<a href="https://github.com/arcage/tarball.cr/blob/6e8b4754b680c4000eb8d3f36868de6a1107c397/src/tarball/header.cr#L124" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -610,7 +605,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/arcage/tarball.cr/blob/0c3cf0c65d99a93cfaf59aec2ed16af353520e68/src/tarball/header.cr#L96" target="_blank">View source</a>]
+          [<a href="https://github.com/arcage/tarball.cr/blob/6e8b4754b680c4000eb8d3f36868de6a1107c397/src/tarball/header.cr#L93" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -628,7 +623,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/arcage/tarball.cr/blob/0c3cf0c65d99a93cfaf59aec2ed16af353520e68/src/tarball/header.cr#L97" target="_blank">View source</a>]
+          [<a href="https://github.com/arcage/tarball.cr/blob/6e8b4754b680c4000eb8d3f36868de6a1107c397/src/tarball/header.cr#L94" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -646,7 +641,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/arcage/tarball.cr/blob/0c3cf0c65d99a93cfaf59aec2ed16af353520e68/src/tarball/header.cr#L90" target="_blank">View source</a>]
+          [<a href="https://github.com/arcage/tarball.cr/blob/6e8b4754b680c4000eb8d3f36868de6a1107c397/src/tarball/header.cr#L87" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -664,7 +659,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/arcage/tarball.cr/blob/0c3cf0c65d99a93cfaf59aec2ed16af353520e68/src/tarball/header.cr#L94" target="_blank">View source</a>]
+          [<a href="https://github.com/arcage/tarball.cr/blob/6e8b4754b680c4000eb8d3f36868de6a1107c397/src/tarball/header.cr#L91" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -682,7 +677,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/arcage/tarball.cr/blob/0c3cf0c65d99a93cfaf59aec2ed16af353520e68/src/tarball/header.cr#L89" target="_blank">View source</a>]
+          [<a href="https://github.com/arcage/tarball.cr/blob/6e8b4754b680c4000eb8d3f36868de6a1107c397/src/tarball/header.cr#L86" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -695,13 +690,12 @@
         <a class="method-permalink" href="#offset%3AUInt64-instance-method">#</a>
       </div>
       
-        <div class="doc"><p>Returns <strong>offset</strong> field in this header.
-(GNUTAR format)</p></div>
+        <div class="doc"><p>Returns <strong>offset</strong> field in this header.(GNUTAR format)</p></div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/arcage/tarball.cr/blob/0c3cf0c65d99a93cfaf59aec2ed16af353520e68/src/tarball/header.cr#L109" target="_blank">View source</a>]
+          [<a href="https://github.com/arcage/tarball.cr/blob/6e8b4754b680c4000eb8d3f36868de6a1107c397/src/tarball/header.cr#L106" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -719,7 +713,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/arcage/tarball.cr/blob/0c3cf0c65d99a93cfaf59aec2ed16af353520e68/src/tarball/header.cr#L200" target="_blank">View source</a>]
+          [<a href="https://github.com/arcage/tarball.cr/blob/6e8b4754b680c4000eb8d3f36868de6a1107c397/src/tarball/header.cr#L197" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -732,13 +726,12 @@
         <a class="method-permalink" href="#prefix%3AString-instance-method">#</a>
       </div>
       
-        <div class="doc"><p>Returns <strong>prefix</strong> field in this header.
-(POSIX format)</p></div>
+        <div class="doc"><p>Returns <strong>prefix</strong> field in this header.(POSIX format)</p></div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/arcage/tarball.cr/blob/0c3cf0c65d99a93cfaf59aec2ed16af353520e68/src/tarball/header.cr#L105" target="_blank">View source</a>]
+          [<a href="https://github.com/arcage/tarball.cr/blob/6e8b4754b680c4000eb8d3f36868de6a1107c397/src/tarball/header.cr#L102" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -751,13 +744,12 @@
         <a class="method-permalink" href="#realsize%3AUInt64-instance-method">#</a>
       </div>
       
-        <div class="doc"><p>Returns <strong>realsize</strong> field in this header.
-(GNUTAR format)</p></div>
+        <div class="doc"><p>Returns <strong>realsize</strong> field in this header.(GNUTAR format)</p></div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/arcage/tarball.cr/blob/0c3cf0c65d99a93cfaf59aec2ed16af353520e68/src/tarball/header.cr#L110" target="_blank">View source</a>]
+          [<a href="https://github.com/arcage/tarball.cr/blob/6e8b4754b680c4000eb8d3f36868de6a1107c397/src/tarball/header.cr#L107" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -775,7 +767,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/arcage/tarball.cr/blob/0c3cf0c65d99a93cfaf59aec2ed16af353520e68/src/tarball/header.cr#L93" target="_blank">View source</a>]
+          [<a href="https://github.com/arcage/tarball.cr/blob/6e8b4754b680c4000eb8d3f36868de6a1107c397/src/tarball/header.cr#L90" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -793,7 +785,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/arcage/tarball.cr/blob/0c3cf0c65d99a93cfaf59aec2ed16af353520e68/src/tarball/header.cr#L120" target="_blank">View source</a>]
+          [<a href="https://github.com/arcage/tarball.cr/blob/6e8b4754b680c4000eb8d3f36868de6a1107c397/src/tarball/header.cr#L117" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -811,7 +803,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/arcage/tarball.cr/blob/0c3cf0c65d99a93cfaf59aec2ed16af353520e68/src/tarball/header.cr#L115" target="_blank">View source</a>]
+          [<a href="https://github.com/arcage/tarball.cr/blob/6e8b4754b680c4000eb8d3f36868de6a1107c397/src/tarball/header.cr#L112" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -829,7 +821,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/arcage/tarball.cr/blob/0c3cf0c65d99a93cfaf59aec2ed16af353520e68/src/tarball/header.cr#L91" target="_blank">View source</a>]
+          [<a href="https://github.com/arcage/tarball.cr/blob/6e8b4754b680c4000eb8d3f36868de6a1107c397/src/tarball/header.cr#L88" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -842,13 +834,12 @@
         <a class="method-permalink" href="#uname%3AString-instance-method">#</a>
       </div>
       
-        <div class="doc"><p>Returns <strong>uname</strong> field in this header.
-(USTAR format)</p></div>
+        <div class="doc"><p>Returns <strong>uname</strong> field in this header.(USTAR format)</p></div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/arcage/tarball.cr/blob/0c3cf0c65d99a93cfaf59aec2ed16af353520e68/src/tarball/header.cr#L100" target="_blank">View source</a>]
+          [<a href="https://github.com/arcage/tarball.cr/blob/6e8b4754b680c4000eb8d3f36868de6a1107c397/src/tarball/header.cr#L97" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -866,7 +857,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/arcage/tarball.cr/blob/0c3cf0c65d99a93cfaf59aec2ed16af353520e68/src/tarball/header.cr#L210" target="_blank">View source</a>]
+          [<a href="https://github.com/arcage/tarball.cr/blob/6e8b4754b680c4000eb8d3f36868de6a1107c397/src/tarball/header.cr#L207" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -879,13 +870,12 @@
         <a class="method-permalink" href="#version%3AString-instance-method">#</a>
       </div>
       
-        <div class="doc"><p>Returns <strong>version</strong> field in this header.
-(USTAR format)</p></div>
+        <div class="doc"><p>Returns <strong>version</strong> field in this header.(USTAR format)</p></div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/arcage/tarball.cr/blob/0c3cf0c65d99a93cfaf59aec2ed16af353520e68/src/tarball/header.cr#L99" target="_blank">View source</a>]
+          [<a href="https://github.com/arcage/tarball.cr/blob/6e8b4754b680c4000eb8d3f36868de6a1107c397/src/tarball/header.cr#L96" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -906,7 +896,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/arcage/tarball.cr/blob/0c3cf0c65d99a93cfaf59aec2ed16af353520e68/src/tarball/header.cr#L69" target="_blank">View source</a>]
+          [<a href="https://github.com/arcage/tarball.cr/blob/6e8b4754b680c4000eb8d3f36868de6a1107c397/src/tarball/header.cr#L68" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -922,7 +912,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/arcage/tarball.cr/blob/0c3cf0c65d99a93cfaf59aec2ed16af353520e68/src/tarball/header.cr#L59" target="_blank">View source</a>]
+          [<a href="https://github.com/arcage/tarball.cr/blob/6e8b4754b680c4000eb8d3f36868de6a1107c397/src/tarball/header.cr#L59" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -938,7 +928,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/arcage/tarball.cr/blob/0c3cf0c65d99a93cfaf59aec2ed16af353520e68/src/tarball/header.cr#L79" target="_blank">View source</a>]
+          [<a href="https://github.com/arcage/tarball.cr/blob/6e8b4754b680c4000eb8d3f36868de6a1107c397/src/tarball/header.cr#L77" target="_blank">View source</a>]
         
       </div>
     </div>
