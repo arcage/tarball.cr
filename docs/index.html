@@ -13,8 +13,8 @@
   CrystalDoc.base_path = "";
 </script>
 
-  <meta id="repository-name" content="">
-  <title>README - </title>
+  <meta id="repository-name" content="github.com/arcage/tarball.cr">
+  <title>README - github.com/arcage/tarball.cr</title>
 </head>
 <body>
 
@@ -36,27 +36,27 @@
   <div class="types-list">
     <ul>
   
-  <li class="parent " data-id="/Tarball" data-name="tarball">
+  <li class="parent " data-id="github.com/arcage/tarball.cr/Tarball" data-name="tarball">
       <a href="Tarball.html">Tarball</a>
       
         <ul>
   
-  <li class=" " data-id="/Tarball/Archive" data-name="tarball::archive">
+  <li class=" " data-id="github.com/arcage/tarball.cr/Tarball/Archive" data-name="tarball::archive">
       <a href="Tarball/Archive.html">Archive</a>
       
     </li>
   
-  <li class=" " data-id="/Tarball/Entity" data-name="tarball::entity">
+  <li class=" " data-id="github.com/arcage/tarball.cr/Tarball/Entity" data-name="tarball::entity">
       <a href="Tarball/Entity.html">Entity</a>
       
     </li>
   
-  <li class="parent " data-id="/Tarball/Entry" data-name="tarball::entry">
+  <li class="parent " data-id="github.com/arcage/tarball.cr/Tarball/Entry" data-name="tarball::entry">
       <a href="Tarball/Entry.html">Entry</a>
       
         <ul>
   
-  <li class=" " data-id="/Tarball/Entry/Type" data-name="tarball::entry::type">
+  <li class=" " data-id="github.com/arcage/tarball.cr/Tarball/Entry/Type" data-name="tarball::entry::type">
       <a href="Tarball/Entry/Type.html">Type</a>
       
     </li>
@@ -66,7 +66,12 @@
       
     </li>
   
-  <li class=" " data-id="/Tarball/Header" data-name="tarball::header">
+  <li class=" " data-id="github.com/arcage/tarball.cr/Tarball/GzArchive" data-name="tarball::gzarchive">
+      <a href="Tarball/GzArchive.html">GzArchive</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/arcage/tarball.cr/Tarball/Header" data-name="tarball::header">
       <a href="Tarball/Header.html">Header</a>
       
     </li>
@@ -90,6 +95,8 @@
 <p>In this version, only following entry types are supported:</p>
 
 <ul><li>Regular file (typeflag: <code>'\0'</code> or <code>'0'</code>)</li><li>Hardlink (typeflag: <code>'1'</code>)</li><li>Symlink (typeflag: <code>'2'</code>)</li><li>Directory (typeflag: <code>'5'</code>)</li><li>GNU long path name (typeflag: <code>'L'</code>)</li><li>GNU long link name (typeflag: <code>'K'</code>)</li></ul>
+
+<p>Supports gzipped tar archive file.</p>
 
 <h2>Installation</h2>
 
@@ -123,6 +130,11 @@
 
   <span class="c"># write content data to IO object.</span>
   tar.write_content(<span class="s">&quot;dir/file_name.txt&quot;</span>, <span class="t">STDOUT</span>)
+<span class="k">end</span>
+
+<span class="c"># open gzipped tar archive</span>
+<span class="t">Tarball</span>.open_gz(<span class="s">&quot;archive.tar.gz&quot;</span>) <span class="k">do</span> <span class="o">|</span>tar<span class="o">|</span>
+  <span class="c"># ...</span>
 <span class="k">end</span></code></pre>
 
 <h2>Contributors</h2>

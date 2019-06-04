@@ -7,7 +7,7 @@
 # Tarball.extract_all("archive.tar", "data")
 # ```
 module Tarball
-  VERSION = "0.1.0"
+  VERSION = "0.1.1"
 
   # :nodoc:
   class Error < Exception; end
@@ -36,7 +36,7 @@ module Tarball
     end
   end
 
-  # Opens tar archive from file.
+  # Opens tar archive file.
   def self.open(archive_file : String)
     Archive.open(archive_file)
   end
@@ -44,6 +44,18 @@ module Tarball
   # Opens tar archive file and yields given block.
   def self.open(archive_file : String, &block)
     archive = Archive.open(archive_file)
+    yield archive
+    archive.close
+  end
+
+  # Opens gzipped tar archive file.
+  def self.open_gz(archive_file : String)
+    GzArchive.open(archive_file)
+  end
+
+  # Opens gzipped tar archive file and yields given block.
+  def self.open(archive_file : String, &block)
+    archive = GzArchive.open(archive_file)
     yield archive
     archive.close
   end

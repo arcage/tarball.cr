@@ -11,6 +11,8 @@ In this version, only following entry types are supported:
 - GNU long path name (typeflag: `'L'`)
 - GNU long link name (typeflag: `'K'`)
 
+Supports gzipped tar archive file.
+
 ## Installation
 
 1. Add the dependency to your `shard.yml`:
@@ -42,6 +44,11 @@ Tarball.open("archive.tar") do |tar|
 
   # write content data to IO object.
   tar.write_content("dir/file_name.txt", STDOUT)
+end
+
+# open gzipped tar archive
+Tarball.open_gz("archive.tar.gz") do |tar|
+  # ...
 end
 ```
 

@@ -1,3 +1,4 @@
+# Tar archive file object.
 class Tarball::Archive
   @closed = false
   @entities = {} of String => Entity
