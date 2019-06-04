@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Crystal Docs 0.27.2">
+
+
+<link href="../css/style.css" rel="stylesheet" type="text/css">
+
+<script type="text/javascript" src="../js/doc.js"></script>
+<script type="text/javascript">
+  CrystalDoc.base_path = "../";
+</script>
+
+  <meta id="repository-name" content="">
+  <title>Tarball::Header - </title>
+</head>
+<body>
+
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false" aria-label="Search">
+    </div>
+
+    <div class="repository-links">
+      <a href="../index.html">README</a>
+    </div>
+  </div>
+
+  <div class="search-results" class="hidden">
+    <ul class="search-list"></ul>
+  </div>
+
+  <div class="types-list">
+    <ul>
+  
+  <li class="parent open current" data-id="/Tarball" data-name="tarball">
+      <a href="../Tarball.html">Tarball</a>
+      
+        <ul>
+  
+  <li class=" " data-id="/Tarball/Archive" data-name="tarball::archive">
+      <a href="../Tarball/Archive.html">Archive</a>
+      
+    </li>
+  
+  <li class=" " data-id="/Tarball/Entity" data-name="tarball::entity">
+      <a href="../Tarball/Entity.html">Entity</a>
+      
+    </li>
+  
+  <li class="parent " data-id="/Tarball/Entry" data-name="tarball::entry">
+      <a href="../Tarball/Entry.html">Entry</a>
+      
+        <ul>
+  
+  <li class=" " data-id="/Tarball/Entry/Type" data-name="tarball::entry::type">
+      <a href="../Tarball/Entry/Type.html">Type</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" current" data-id="/Tarball/Header" data-name="tarball::header">
+      <a href="../Tarball/Header.html">Header</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+  </div>
+</div>
+
+
+<div class="main-content">
+<h1 class="type-name">
+
+  <span class="kind">class</span> Tarball::Header
+
+</h1>
+
+
+  <ul class="superclass-hierarchy"><li class="superclass"><a href="../Tarball/Header.html">Tarball::Header</a></li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
+
+
+
+
+  <h2>Overview</h2>
+
+  <p>Header object of entries included in tar file.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2>Defined in:</h2>
+  
+
+
+
+
+
+  <h2>Constructors</h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#new%28data%3ABytes%29-class-method" class="signature"><strong>.new</strong>(data : Bytes)</a>
+        
+          <div class="summary"><p>Creates Header object from byte data.</p></div>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+  <h2>Instance Method Summary</h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#atime%3ATime-instance-method" class="signature"><strong>#atime</strong> : Time</a>
+        
+          <div class="summary"><p>Returns <strong>atime</strong> field in this header.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#checksum%3AUInt64-instance-method" class="signature"><strong>#checksum</strong> : UInt64</a>
+        
+          <div class="summary"><p>Returns <strong>checksum</strong> field in this header.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#content_blocks%3AInt32-instance-method" class="signature"><strong>#content_blocks</strong> : Int32</a>
+        
+          <div class="summary"><p>Returns how many blocks exist for content data.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#ctime%3ATime-instance-method" class="signature"><strong>#ctime</strong> : Time</a>
+        
+          <div class="summary"><p>Returns <strong>ctime</strong> field in this header.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#devmajor%3AUInt64-instance-method" class="signature"><strong>#devmajor</strong> : UInt64</a>
+        
+          <div class="summary"><p>Returns <strong>devmajor</strong> field in this header.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#devminor%3AUInt64-instance-method" class="signature"><strong>#devminor</strong> : UInt64</a>
+        
+          <div class="summary"><p>Returns <strong>devminor</strong> field in this header.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#gid%3AUInt64-instance-method" class="signature"><strong>#gid</strong> : UInt64</a>
+        
+          <div class="summary"><p>Returns <strong>gid</strong> field in this header.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#gname%3AString-instance-method" class="signature"><strong>#gname</strong> : String</a>
+        
+          <div class="summary"><p>Returns <strong>gname</strong> field in this header.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#gnutar%3F%3ABool-instance-method" class="signature"><strong>#gnutar?</strong> : Bool</a>
+        
+          <div class="summary"><p>Returns <code>true</code> when self is GNUTAR format.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#isextended%3ABool-instance-method" class="signature"><strong>#isextended</strong> : Bool</a>
+        
+          <div class="summary"><p>Returns <strong>isextended</strong> field in this header.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#linkname%3AString-instance-method" class="signature"><strong>#linkname</strong> : String</a>
+        
+          <div class="summary"><p>Returns <strong>linkname</strong> field in this header.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#magic%3AString-instance-method" class="signature"><strong>#magic</strong> : String</a>
+        
+          <div class="summary"><p>Returns <strong>magic</strong> field in this header.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#mode%3AUInt64-instance-method" class="signature"><strong>#mode</strong> : UInt64</a>
+        
+          <div class="summary"><p>Returns <strong>mode</strong> field in this header.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#mtime%3ATime-instance-method" class="signature"><strong>#mtime</strong> : Time</a>
+        
+          <div class="summary"><p>Returns <strong>mtime</strong> field in this header.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#name%3AString-instance-method" class="signature"><strong>#name</strong> : String</a>
+        
+          <div class="summary"><p>Returns <strong>name</strong> field in this header.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#offset%3AUInt64-instance-method" class="signature"><strong>#offset</strong> : UInt64</a>
+        
+          <div class="summary"><p>Returns <strong>offset</strong> field in this header.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#posix%3F%3ABool-instance-method" class="signature"><strong>#posix?</strong> : Bool</a>
+        
+          <div class="summary"><p>Returns <code>true</code> when self is POSIX format.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#prefix%3AString-instance-method" class="signature"><strong>#prefix</strong> : String</a>
+        
+          <div class="summary"><p>Returns <strong>prefix</strong> field in this header.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#realsize%3AUInt64-instance-method" class="signature"><strong>#realsize</strong> : UInt64</a>
+        
+          <div class="summary"><p>Returns <strong>realsize</strong> field in this header.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#size%3AUInt64-instance-method" class="signature"><strong>#size</strong> : UInt64</a>
+        
+          <div class="summary"><p>Returns <strong>size</strong> field in this header.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#type-instance-method" class="signature"><strong>#type</strong></a>
+        
+          <div class="summary"><p>Returns entiry type.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#typeflag%3AChar-instance-method" class="signature"><strong>#typeflag</strong> : Char</a>
+        
+          <div class="summary"><p>Returns <strong>typeflag</strong> field in this header.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#uid%3AUInt64-instance-method" class="signature"><strong>#uid</strong> : UInt64</a>
+        
+          <div class="summary"><p>Returns <strong>uid</strong> field in this header.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#uname%3AString-instance-method" class="signature"><strong>#uname</strong> : String</a>
+        
+          <div class="summary"><p>Returns <strong>uname</strong> field in this header.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#ustar%3F%3ABool-instance-method" class="signature"><strong>#ustar?</strong> : Bool</a>
+        
+          <div class="summary"><p>Returns <code>true</code> when self is POSIX or GNUTAR format.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#version%3AString-instance-method" class="signature"><strong>#version</strong> : String</a>
+        
+          <div class="summary"><p>Returns <strong>version</strong> field in this header.</p></div>
+        
+      </li>
+    
+  </ul>
+
+
+
+  <h2>Macro Summary</h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#number_field%28field_name%2Cheader_format%29-macro" class="signature"><strong>number_field</strong>(field_name, header_format)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#string_field%28field_name%2Cheader_format%29-macro" class="signature"><strong>string_field</strong>(field_name, header_format)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#time_field%28field_name%2Cheader_format%29-macro" class="signature"><strong>time_field</strong>(field_name, header_format)</a>
+        
+      </li>
+    
+  </ul>
+
+
+
+<div class="methods-inherited">
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+</div>
+
+
+  <h2>Constructor Detail</h2>
+  
+    <div class="entry-detail" id="new(data:Bytes)-class-method">
+      <div class="signature">
+        
+        def self.<strong>new</strong>(data : Bytes)
+
+        <a class="method-permalink" href="#new%28data%3ABytes%29-class-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Creates Header object from byte data.</p>
+
+<p><code>data</code> must be 512 bytes.</p></div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+
+
+
+
+
+  <h2>Instance Method Detail</h2>
+  
+    <div class="entry-detail" id="atime:Time-instance-method">
+      <div class="signature">
+        
+        def <strong>atime</strong> : Time
+
+        <a class="method-permalink" href="#atime%3ATime-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Returns <strong>atime</strong> field in this header.
+(GNUTAR format)</p></div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="checksum:UInt64-instance-method">
+      <div class="signature">
+        
+        def <strong>checksum</strong> : UInt64
+
+        <a class="method-permalink" href="#checksum%3AUInt64-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Returns <strong>checksum</strong> field in this header.</p></div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="content_blocks:Int32-instance-method">
+      <div class="signature">
+        
+        def <strong>content_blocks</strong> : Int32
+
+        <a class="method-permalink" href="#content_blocks%3AInt32-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Returns how many blocks exist for content data.</p></div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="ctime:Time-instance-method">
+      <div class="signature">
+        
+        def <strong>ctime</strong> : Time
+
+        <a class="method-permalink" href="#ctime%3ATime-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Returns <strong>ctime</strong> field in this header.
+(GNUTAR format)</p></div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="devmajor:UInt64-instance-method">
+      <div class="signature">
+        
+        def <strong>devmajor</strong> : UInt64
+
+        <a class="method-permalink" href="#devmajor%3AUInt64-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Returns <strong>devmajor</strong> field in this header.
+(USTAR format)</p></div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="devminor:UInt64-instance-method">
+      <div class="signature">
+        
+        def <strong>devminor</strong> : UInt64
+
+        <a class="method-permalink" href="#devminor%3AUInt64-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Returns <strong>devminor</strong> field in this header.
+(USTAR format)</p></div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="gid:UInt64-instance-method">
+      <div class="signature">
+        
+        def <strong>gid</strong> : UInt64
+
+        <a class="method-permalink" href="#gid%3AUInt64-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Returns <strong>gid</strong> field in this header.</p></div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="gname:String-instance-method">
+      <div class="signature">
+        
+        def <strong>gname</strong> : String
+
+        <a class="method-permalink" href="#gname%3AString-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Returns <strong>gname</strong> field in this header.
+(USTAR format)</p></div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="gnutar?:Bool-instance-method">
+      <div class="signature">
+        
+        def <strong>gnutar?</strong> : Bool
+
+        <a class="method-permalink" href="#gnutar%3F%3ABool-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Returns <code>true</code> when self is GNUTAR format.</p></div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="isextended:Bool-instance-method">
+      <div class="signature">
+        
+        def <strong>isextended</strong> : Bool
+
+        <a class="method-permalink" href="#isextended%3ABool-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Returns <strong>isextended</strong> field in this header. (GNUTAR format)</p></div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="linkname:String-instance-method">
+      <div class="signature">
+        
+        def <strong>linkname</strong> : String
+
+        <a class="method-permalink" href="#linkname%3AString-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Returns <strong>linkname</strong> field in this header.</p></div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="magic:String-instance-method">
+      <div class="signature">
+        
+        def <strong>magic</strong> : String
+
+        <a class="method-permalink" href="#magic%3AString-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Returns <strong>magic</strong> field in this header.</p></div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="mode:UInt64-instance-method">
+      <div class="signature">
+        
+        def <strong>mode</strong> : UInt64
+
+        <a class="method-permalink" href="#mode%3AUInt64-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Returns <strong>mode</strong> field in this header.</p></div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="mtime:Time-instance-method">
+      <div class="signature">
+        
+        def <strong>mtime</strong> : Time
+
+        <a class="method-permalink" href="#mtime%3ATime-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Returns <strong>mtime</strong> field in this header.</p></div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="name:String-instance-method">
+      <div class="signature">
+        
+        def <strong>name</strong> : String
+
+        <a class="method-permalink" href="#name%3AString-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Returns <strong>name</strong> field in this header.</p></div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="offset:UInt64-instance-method">
+      <div class="signature">
+        
+        def <strong>offset</strong> : UInt64
+
+        <a class="method-permalink" href="#offset%3AUInt64-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Returns <strong>offset</strong> field in this header.
+(GNUTAR format)</p></div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="posix?:Bool-instance-method">
+      <div class="signature">
+        
+        def <strong>posix?</strong> : Bool
+
+        <a class="method-permalink" href="#posix%3F%3ABool-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Returns <code>true</code> when self is POSIX format.</p></div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="prefix:String-instance-method">
+      <div class="signature">
+        
+        def <strong>prefix</strong> : String
+
+        <a class="method-permalink" href="#prefix%3AString-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Returns <strong>prefix</strong> field in this header.
+(POSIX format)</p></div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="realsize:UInt64-instance-method">
+      <div class="signature">
+        
+        def <strong>realsize</strong> : UInt64
+
+        <a class="method-permalink" href="#realsize%3AUInt64-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Returns <strong>realsize</strong> field in this header.
+(GNUTAR format)</p></div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="size:UInt64-instance-method">
+      <div class="signature">
+        
+        def <strong>size</strong> : UInt64
+
+        <a class="method-permalink" href="#size%3AUInt64-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Returns <strong>size</strong> field in this header.</p></div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="type-instance-method">
+      <div class="signature">
+        
+        def <strong>type</strong>
+
+        <a class="method-permalink" href="#type-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Returns entiry type.</p></div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="typeflag:Char-instance-method">
+      <div class="signature">
+        
+        def <strong>typeflag</strong> : Char
+
+        <a class="method-permalink" href="#typeflag%3AChar-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Returns <strong>typeflag</strong> field in this header.</p></div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="uid:UInt64-instance-method">
+      <div class="signature">
+        
+        def <strong>uid</strong> : UInt64
+
+        <a class="method-permalink" href="#uid%3AUInt64-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Returns <strong>uid</strong> field in this header.</p></div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="uname:String-instance-method">
+      <div class="signature">
+        
+        def <strong>uname</strong> : String
+
+        <a class="method-permalink" href="#uname%3AString-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Returns <strong>uname</strong> field in this header.
+(USTAR format)</p></div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="ustar?:Bool-instance-method">
+      <div class="signature">
+        
+        def <strong>ustar?</strong> : Bool
+
+        <a class="method-permalink" href="#ustar%3F%3ABool-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Returns <code>true</code> when self is POSIX or GNUTAR format.</p></div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="version:String-instance-method">
+      <div class="signature">
+        
+        def <strong>version</strong> : String
+
+        <a class="method-permalink" href="#version%3AString-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Returns <strong>version</strong> field in this header.
+(USTAR format)</p></div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+
+
+
+  <h2>Macro Detail</h2>
+  
+    <div class="entry-detail" id="number_field(field_name,header_format)-macro">
+      <div class="signature">
+        
+        macro <strong>number_field</strong>(field_name, header_format)
+
+        <a class="method-permalink" href="#number_field%28field_name%2Cheader_format%29-macro">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="string_field(field_name,header_format)-macro">
+      <div class="signature">
+        
+        macro <strong>string_field</strong>(field_name, header_format)
+
+        <a class="method-permalink" href="#string_field%28field_name%2Cheader_format%29-macro">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="time_field(field_name,header_format)-macro">
+      <div class="signature">
+        
+        macro <strong>time_field</strong>(field_name, header_format)
+
+        <a class="method-permalink" href="#time_field%28field_name%2Cheader_format%29-macro">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+
+
+</div>
+
+</body>
+</html>

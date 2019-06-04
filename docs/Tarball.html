@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Crystal Docs 0.27.2">
+
+
+<link href="css/style.css" rel="stylesheet" type="text/css">
+
+<script type="text/javascript" src="js/doc.js"></script>
+<script type="text/javascript">
+  CrystalDoc.base_path = "";
+</script>
+
+  <meta id="repository-name" content="">
+  <title>Tarball - </title>
+</head>
+<body>
+
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false" aria-label="Search">
+    </div>
+
+    <div class="repository-links">
+      <a href="index.html">README</a>
+    </div>
+  </div>
+
+  <div class="search-results" class="hidden">
+    <ul class="search-list"></ul>
+  </div>
+
+  <div class="types-list">
+    <ul>
+  
+  <li class="parent open current" data-id="/Tarball" data-name="tarball">
+      <a href="Tarball.html">Tarball</a>
+      
+        <ul>
+  
+  <li class=" " data-id="/Tarball/Archive" data-name="tarball::archive">
+      <a href="Tarball/Archive.html">Archive</a>
+      
+    </li>
+  
+  <li class=" " data-id="/Tarball/Entity" data-name="tarball::entity">
+      <a href="Tarball/Entity.html">Entity</a>
+      
+    </li>
+  
+  <li class="parent " data-id="/Tarball/Entry" data-name="tarball::entry">
+      <a href="Tarball/Entry.html">Entry</a>
+      
+        <ul>
+  
+  <li class=" " data-id="/Tarball/Entry/Type" data-name="tarball::entry::type">
+      <a href="Tarball/Entry/Type.html">Type</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="/Tarball/Header" data-name="tarball::header">
+      <a href="Tarball/Header.html">Header</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+  </div>
+</div>
+
+
+<div class="main-content">
+<h1 class="type-name">
+
+  <span class="kind">module</span> Tarball
+
+</h1>
+
+
+
+
+
+  <h2>Overview</h2>
+
+  <p>Reading tar archive file.</p>
+
+<pre><code class="language-crystal"><span class="k">require</span> <span class="s">&quot;tarball&quot;</span>
+
+<span class="c"># Extracts all files in &quot;archive.tar&quot; to under the &quot;data&quot; directory.</span>
+<span class="t">Tarball</span>.extract_all(<span class="s">&quot;archive.tar&quot;</span>, <span class="s">&quot;data&quot;</span>)</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2>Defined in:</h2>
+  
+
+
+
+  
+    <h2>Constant Summary</h2>
+  
+  <dl>
+    
+      <dt class="entry-const" id="BLOCK_SIZE">
+        <strong>BLOCK_SIZE</strong> = <code><span class="n">512</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="VERSION">
+        <strong>VERSION</strong> = <code><span class="s">&quot;0.1.0&quot;</span></code>
+      </dt>
+      
+    
+  </dl>
+
+
+
+
+
+  <h2>Class Method Summary</h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#extract_all%28archive_file%3AString%2Cdir%3D%26quot%3B.%26quot%3B%29-class-method" class="signature"><strong>.extract_all</strong>(archive_file : String, dir = <span class="s">&quot;.&quot;</span>)</a>
+        
+          <div class="summary"><p>Extracts all file system objects in the tar archive file.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#open%28archive_file%3AString%29-class-method" class="signature"><strong>.open</strong>(archive_file : String)</a>
+        
+          <div class="summary"><p>Opens tar archive from file.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#open%28archive_file%3AString%2C%26block%29-class-method" class="signature"><strong>.open</strong>(archive_file : String, &block)</a>
+        
+          <div class="summary"><p>Opens tar archive file and yields given block.</p></div>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+
+
+<div class="methods-inherited">
+  
+</div>
+
+
+
+
+  <h2>Class Method Detail</h2>
+  
+    <div class="entry-detail" id="extract_all(archive_file:String,dir=&amp;quot;.&amp;quot;)-class-method">
+      <div class="signature">
+        
+        def self.<strong>extract_all</strong>(archive_file : String, dir = <span class="s">&quot;.&quot;</span>)
+
+        <a class="method-permalink" href="#extract_all%28archive_file%3AString%2Cdir%3D%26quot%3B.%26quot%3B%29-class-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Extracts all file system objects in the tar archive file.</p></div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="open(archive_file:String)-class-method">
+      <div class="signature">
+        
+        def self.<strong>open</strong>(archive_file : String)
+
+        <a class="method-permalink" href="#open%28archive_file%3AString%29-class-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Opens tar archive from file.</p></div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="open(archive_file:String,&amp;block)-class-method">
+      <div class="signature">
+        
+        def self.<strong>open</strong>(archive_file : String, &block)
+
+        <a class="method-permalink" href="#open%28archive_file%3AString%2C%26block%29-class-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Opens tar archive file and yields given block.</p></div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+
+
+
+
+
+
+</div>
+
+</body>
+</html>

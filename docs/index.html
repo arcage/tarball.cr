@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Crystal Docs 0.27.2">
+
+
+<link href="css/style.css" rel="stylesheet" type="text/css">
+
+<script type="text/javascript" src="js/doc.js"></script>
+<script type="text/javascript">
+  CrystalDoc.base_path = "";
+</script>
+
+  <meta id="repository-name" content="">
+  <title>README - </title>
+</head>
+<body>
+
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false" aria-label="Search">
+    </div>
+
+    <div class="repository-links">
+      <a href="index.html">README</a>
+    </div>
+  </div>
+
+  <div class="search-results" class="hidden">
+    <ul class="search-list"></ul>
+  </div>
+
+  <div class="types-list">
+    <ul>
+  
+  <li class="parent " data-id="/Tarball" data-name="tarball">
+      <a href="Tarball.html">Tarball</a>
+      
+        <ul>
+  
+  <li class=" " data-id="/Tarball/Archive" data-name="tarball::archive">
+      <a href="Tarball/Archive.html">Archive</a>
+      
+    </li>
+  
+  <li class=" " data-id="/Tarball/Entity" data-name="tarball::entity">
+      <a href="Tarball/Entity.html">Entity</a>
+      
+    </li>
+  
+  <li class="parent " data-id="/Tarball/Entry" data-name="tarball::entry">
+      <a href="Tarball/Entry.html">Entry</a>
+      
+        <ul>
+  
+  <li class=" " data-id="/Tarball/Entry/Type" data-name="tarball::entry::type">
+      <a href="Tarball/Entry/Type.html">Type</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="/Tarball/Header" data-name="tarball::header">
+      <a href="Tarball/Header.html">Header</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+  </div>
+</div>
+
+
+<div class="main-content">
+<h1>Pure crystal tar archive reader</h1>
+
+<p>This shard makes you to read the TAR archive files(POSIX ustar format and some functions in GNUTAR fomat).</p>
+
+<p>In this version, only following entry types are supported:</p>
+
+<ul><li>Regular file (typeflag: <code>'\0'</code> or <code>'0'</code>)</li><li>Hardlink (typeflag: <code>'1'</code>)</li><li>Symlink (typeflag: <code>'2'</code>)</li><li>Directory (typeflag: <code>'5'</code>)</li><li>GNU long path name (typeflag: <code>'L'</code>)</li><li>GNU long link name (typeflag: <code>'K'</code>)</li></ul>
+
+<h2>Installation</h2>
+
+<ol><li>Add the dependency to your <code>shard.yml</code>:</li></ol>
+
+<p><code></code>`yaml
+   dependencies:</p>
+
+<pre><code> tarball:
+   github: arcage<span class="s">/tarball.cr</code></pre>
+
+<p><code></code>`</p>
+
+<ol><li>Run <code>shards install</code></li></ol>
+
+<h2>Usage</h2>
+
+<pre><code class="language-crystal"><span class="k">require</span> <span class="s">&quot;tarball&quot;</span>
+
+<span class="c"># Extracts all files in &quot;archive.tar&quot; to under the &quot;data&quot; directory.</span>
+<span class="t">Tarball</span>.extract_all(<span class="s">&quot;archive.tar&quot;</span>, <span class="s">&quot;data&quot;</span>)
+
+<span class="t">Tarball</span>.open(<span class="s">&quot;archive.tar&quot;</span>) <span class="k">do</span> <span class="o">|</span>tar<span class="o">|</span>
+
+  <span class="c"># list of included file system objects.</span>
+  tar.filenames
+  <span class="c">#=&gt; [&quot;dir/&quot;, &quot;dir/file_name.txt&quot;, &quot;dir/image.png&quot;]</span>
+
+  <span class="c"># extract specific file to specific path.</span>
+  tar.extract_file(<span class="s">&quot;dir/file_name.txt&quot;</span>, <span class="s">&quot;other_name.txt&quot;</span>)
+
+  <span class="c"># write content data to IO object.</span>
+  tar.write_content(<span class="s">&quot;dir/file_name.txt&quot;</span>, <span class="t">STDOUT</span>)
+<span class="k">end</span></code></pre>
+
+<h2>Contributors</h2>
+
+<ul><li><a href="https://github.com/arcage" target="_blank">ʕ·ᴥ·ʔAKJ</a> - creator and maintainer</li></ul>
+</div>
+</body>
+</html>

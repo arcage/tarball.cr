@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Crystal Docs 0.27.2">
+
+
+<link href="../css/style.css" rel="stylesheet" type="text/css">
+
+<script type="text/javascript" src="../js/doc.js"></script>
+<script type="text/javascript">
+  CrystalDoc.base_path = "../";
+</script>
+
+  <meta id="repository-name" content="">
+  <title>Tarball::Entity - </title>
+</head>
+<body>
+
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false" aria-label="Search">
+    </div>
+
+    <div class="repository-links">
+      <a href="../index.html">README</a>
+    </div>
+  </div>
+
+  <div class="search-results" class="hidden">
+    <ul class="search-list"></ul>
+  </div>
+
+  <div class="types-list">
+    <ul>
+  
+  <li class="parent open current" data-id="/Tarball" data-name="tarball">
+      <a href="../Tarball.html">Tarball</a>
+      
+        <ul>
+  
+  <li class=" " data-id="/Tarball/Archive" data-name="tarball::archive">
+      <a href="../Tarball/Archive.html">Archive</a>
+      
+    </li>
+  
+  <li class=" current" data-id="/Tarball/Entity" data-name="tarball::entity">
+      <a href="../Tarball/Entity.html">Entity</a>
+      
+    </li>
+  
+  <li class="parent " data-id="/Tarball/Entry" data-name="tarball::entry">
+      <a href="../Tarball/Entry.html">Entry</a>
+      
+        <ul>
+  
+  <li class=" " data-id="/Tarball/Entry/Type" data-name="tarball::entry::type">
+      <a href="../Tarball/Entry/Type.html">Type</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="/Tarball/Header" data-name="tarball::header">
+      <a href="../Tarball/Header.html">Header</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+  </div>
+</div>
+
+
+<div class="main-content">
+<h1 class="type-name">
+
+  <span class="kind">class</span> Tarball::Entity
+
+</h1>
+
+
+  <ul class="superclass-hierarchy"><li class="superclass"><a href="../Tarball/Entity.html">Tarball::Entity</a></li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
+
+
+
+
+  <h2>Overview</h2>
+
+  <p>File system objects(regular files, directries or links) in the tar archive.</p>
+
+<p>Tarball::Entity object must contain an entity body entry with one of following entry types:</p>
+
+<ul><li>Tarball::Entry::Type::FILE (Regular file)</li><li>Tarball::Entry::Type::HARDLINK (Hardlink)</li><li>Tarball::Entry::Type::SYMLINK (Symlink)</li><li>Tarball::Entry::Type::DIRECTORY (Directory)</li></ul>
+
+<p>It can contain one each of Tarball::Entry::Type::LONGNAME (GNUTAR long name) entry and a Tarball::Entry::Type::LONGNAME (GNUTAR long linkname) entry.</p>
+
+
+
+
+
+  <h2>Included Modules</h2>
+  <ul class="other-types-list">
+  
+    <li class="other-type">Comparable(<a href="../Tarball/Entity.html">Tarball::Entity</a>)</li>
+  
+  </ul>
+
+
+
+
+
+
+
+
+
+
+  <h2>Defined in:</h2>
+  
+
+
+
+
+
+
+
+
+
+  <h2>Instance Method Summary</h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#%28other%3Aself%29-instance-method" class="signature"><strong>#<=></strong>(other : <span class="k">self</span>)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#add_entry%28entry%3AEntry%29-instance-method" class="signature"><strong>#add_entry</strong>(entry : Entry)</a>
+        
+          <div class="summary"><p>Adds tar file entry to this entity.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#content%28io%3AIO%29-instance-method" class="signature"><strong>#content</strong>(io : IO)</a>
+        
+          <div class="summary"><p>Writes content data of the entity to IO.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#directory%3F-instance-method" class="signature"><strong>#directory?</strong></a>
+        
+          <div class="summary"><p>Returns <code>true</code> when self is a directory.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#file%3F-instance-method" class="signature"><strong>#file?</strong></a>
+        
+          <div class="summary"><p>Returns <code>true</code> when self is a regular file.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#hardlink%3F-instance-method" class="signature"><strong>#hardlink?</strong></a>
+        
+          <div class="summary"><p>Returns <code>true</code> when self is a hardlink.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#has_body%3F-instance-method" class="signature"><strong>#has_body?</strong></a>
+        
+          <div class="summary"><p>Returns <code>true</code> when entity body has been set.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#has_long_linkname%3F-instance-method" class="signature"><strong>#has_long_linkname?</strong></a>
+        
+          <div class="summary"><p>Returns <code>true</code> when entity body has been set.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#has_long_name%3F-instance-method" class="signature"><strong>#has_long_name?</strong></a>
+        
+          <div class="summary"><p>Returns <code>true</code> when entity body has been set.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#linkname-instance-method" class="signature"><strong>#linkname</strong></a>
+        
+          <div class="summary"><p>Returns file or directory name that this entity links to.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#name-instance-method" class="signature"><strong>#name</strong></a>
+        
+          <div class="summary"><p>Returns file or directory name of this entity.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#symlink%3F-instance-method" class="signature"><strong>#symlink?</strong></a>
+        
+          <div class="summary"><p>Returns <code>true</code> when self is a symlink.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#write_content%28io%3AIO%29-instance-method" class="signature"><strong>#write_content</strong>(io : IO)</a>
+        
+          <div class="summary"><p>Writes content data to IO.</p></div>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+<div class="methods-inherited">
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+</div>
+
+
+
+
+
+
+  <h2>Instance Method Detail</h2>
+  
+    <div class="entry-detail" id="(other:self)-instance-method">
+      <div class="signature">
+        
+        def <strong><=></strong>(other : <span class="k">self</span>)
+
+        <a class="method-permalink" href="#%28other%3Aself%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="add_entry(entry:Entry)-instance-method">
+      <div class="signature">
+        
+        def <strong>add_entry</strong>(entry : <a href="../Tarball/Entry.html">Entry</a>)
+
+        <a class="method-permalink" href="#add_entry%28entry%3AEntry%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Adds tar file entry to this entity.</p></div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="content(io:IO)-instance-method">
+      <div class="signature">
+        
+        def <strong>content</strong>(io : IO)
+
+        <a class="method-permalink" href="#content%28io%3AIO%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Writes content data of the entity to IO.</p></div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="directory?-instance-method">
+      <div class="signature">
+        
+        def <strong>directory?</strong>
+
+        <a class="method-permalink" href="#directory%3F-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Returns <code>true</code> when self is a directory.</p></div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="file?-instance-method">
+      <div class="signature">
+        
+        def <strong>file?</strong>
+
+        <a class="method-permalink" href="#file%3F-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Returns <code>true</code> when self is a regular file.</p></div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="hardlink?-instance-method">
+      <div class="signature">
+        
+        def <strong>hardlink?</strong>
+
+        <a class="method-permalink" href="#hardlink%3F-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Returns <code>true</code> when self is a hardlink.</p></div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="has_body?-instance-method">
+      <div class="signature">
+        
+        def <strong>has_body?</strong>
+
+        <a class="method-permalink" href="#has_body%3F-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Returns <code>true</code> when entity body has been set.</p></div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="has_long_linkname?-instance-method">
+      <div class="signature">
+        
+        def <strong>has_long_linkname?</strong>
+
+        <a class="method-permalink" href="#has_long_linkname%3F-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Returns <code>true</code> when entity body has been set.</p></div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="has_long_name?-instance-method">
+      <div class="signature">
+        
+        def <strong>has_long_name?</strong>
+
+        <a class="method-permalink" href="#has_long_name%3F-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Returns <code>true</code> when entity body has been set.</p></div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="linkname-instance-method">
+      <div class="signature">
+        
+        def <strong>linkname</strong>
+
+        <a class="method-permalink" href="#linkname-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Returns file or directory name that this entity links to.</p>
+
+<p><code><a href="../Tarball/Entity.html#linkname-instance-method">#linkname</a></code> is only used when the entity body is Entry::Type::HARDLINK or Entry::Type::SYMLINK.</p></div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="name-instance-method">
+      <div class="signature">
+        
+        def <strong>name</strong>
+
+        <a class="method-permalink" href="#name-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Returns file or directory name of this entity.</p></div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="symlink?-instance-method">
+      <div class="signature">
+        
+        def <strong>symlink?</strong>
+
+        <a class="method-permalink" href="#symlink%3F-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Returns <code>true</code> when self is a symlink.</p></div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="write_content(io:IO)-instance-method">
+      <div class="signature">
+        
+        def <strong>write_content</strong>(io : IO)
+
+        <a class="method-permalink" href="#write_content%28io%3AIO%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Writes content data to IO.</p></div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+
+
+
+
+</div>
+
+</body>
+</html>
