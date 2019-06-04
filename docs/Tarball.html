@@ -41,8 +41,18 @@
       
         <ul>
   
-  <li class=" " data-id="github.com/arcage/tarball.cr/Tarball/Archive" data-name="tarball::archive">
+  <li class="parent " data-id="github.com/arcage/tarball.cr/Tarball/Archive" data-name="tarball::archive">
       <a href="Tarball/Archive.html">Archive</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/arcage/tarball.cr/Tarball/Archive/Format" data-name="tarball::archive::format">
+      <a href="Tarball/Archive/Format.html">Format</a>
+      
+    </li>
+  
+</ul>
+
       
     </li>
   
@@ -100,9 +110,7 @@
 
   <h2>Overview</h2>
 
-  <p>Reading tar archive file.</p>
-
-<pre><code class="language-crystal"><span class="k">require</span> <span class="s">&quot;tarball&quot;</span>
+  <pre><code class="language-crystal"><span class="k">require</span> <span class="s">&quot;tarball&quot;</span>
 
 <span class="c"># Extracts all files in &quot;archive.tar&quot; to under the &quot;data&quot; directory.</span>
 <span class="t">Tarball</span>.extract_all(<span class="s">&quot;archive.tar&quot;</span>, <span class="s">&quot;data&quot;</span>)</code></pre>
@@ -123,7 +131,7 @@
   <h2>Defined in:</h2>
   
     
-      <a href="https://github.com/arcage/tarball.cr/blob/14207009f5ab10c4548349b722bf077308373747/src/tarball.cr#L9" target="_blank">
+      <a href="https://github.com/arcage/tarball.cr/blob/953fab212398cbe24f74ab07739e68c502a5fcd1/src/tarball.cr#L7" target="_blank">
         tarball.cr
       </a>
     
@@ -173,7 +181,7 @@
       <li class="entry-summary">
         <a href="#open%28archive_file%3AString%2C%26block%29-class-method" class="signature"><strong>.open</strong>(archive_file : String, &block)</a>
         
-          <div class="summary"><p>Opens gzipped tar archive file and yields given block.</p></div>
+          <div class="summary"><p>Opens tar archive file and yields given block.</p></div>
         
       </li>
     
@@ -181,6 +189,13 @@
         <a href="#open_gz%28archive_file%3AString%29-class-method" class="signature"><strong>.open_gz</strong>(archive_file : String)</a>
         
           <div class="summary"><p>Opens gzipped tar archive file.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#open_gz%28archive_file%3AString%2C%26block%29-class-method" class="signature"><strong>.open_gz</strong>(archive_file : String, &block)</a>
+        
+          <div class="summary"><p>Opens gzipped tar archive file and yields given block.</p></div>
         
       </li>
     
@@ -214,7 +229,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/arcage/tarball.cr/blob/14207009f5ab10c4548349b722bf077308373747/src/tarball.cr#L33" target="_blank">View source</a>]
+          [<a href="https://github.com/arcage/tarball.cr/blob/953fab212398cbe24f74ab07739e68c502a5fcd1/src/tarball.cr#L34" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -232,7 +247,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/arcage/tarball.cr/blob/14207009f5ab10c4548349b722bf077308373747/src/tarball.cr#L40" target="_blank">View source</a>]
+          [<a href="https://github.com/arcage/tarball.cr/blob/953fab212398cbe24f74ab07739e68c502a5fcd1/src/tarball.cr#L41" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -245,12 +260,12 @@
         <a class="method-permalink" href="#open%28archive_file%3AString%2C%26block%29-class-method">#</a>
       </div>
       
-        <div class="doc"><p>Opens gzipped tar archive file and yields given block.</p></div>
+        <div class="doc"><p>Opens tar archive file and yields given block.</p></div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/arcage/tarball.cr/blob/14207009f5ab10c4548349b722bf077308373747/src/tarball.cr#L57" target="_blank">View source</a>]
+          [<a href="https://github.com/arcage/tarball.cr/blob/953fab212398cbe24f74ab07739e68c502a5fcd1/src/tarball.cr#L46" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -268,7 +283,25 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/arcage/tarball.cr/blob/14207009f5ab10c4548349b722bf077308373747/src/tarball.cr#L52" target="_blank">View source</a>]
+          [<a href="https://github.com/arcage/tarball.cr/blob/953fab212398cbe24f74ab07739e68c502a5fcd1/src/tarball.cr#L53" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="open_gz(archive_file:String,&amp;block)-class-method">
+      <div class="signature">
+        
+        def self.<strong>open_gz</strong>(archive_file : String, &block)
+
+        <a class="method-permalink" href="#open_gz%28archive_file%3AString%2C%26block%29-class-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Opens gzipped tar archive file and yields given block.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/arcage/tarball.cr/blob/953fab212398cbe24f74ab07739e68c502a5fcd1/src/tarball.cr#L58" target="_blank">View source</a>]
         
       </div>
     </div>

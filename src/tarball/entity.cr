@@ -2,14 +2,14 @@ require "file_utils"
 
 # File system objects(regular files, directries or links) in the tar archive.
 #
-# Tarball::Entity object must contain an entity body entry with one of following entry types:
+# `Tarball::Entity` object must contain an entity body entry with one of following entry types:
 #
-# - Tarball::Entry::Type::FILE (Regular file)
-# - Tarball::Entry::Type::HARDLINK (Hardlink)
-# - Tarball::Entry::Type::SYMLINK (Symlink)
-# - Tarball::Entry::Type::DIRECTORY (Directory)
+# - `Tarball::Entry::Type::FILE` (Regular file)
+# - `Tarball::Entry::Type::HARDLINK` (Hardlink)
+# - `Tarball::Entry::Type::SYMLINK` (Symlink)
+# - `Tarball::Entry::Type::DIRECTORY` (Directory)
 #
-# It can contain one each of Tarball::Entry::Type::LONGNAME (GNUTAR long name) entry and a Tarball::Entry::Type::LONGNAME (GNUTAR long linkname) entry.
+# It can contain one each of `Tarball::Entry::Type::LONGNAME` (GNUTAR long name) entry, a `Tarball::Entry::Type::LONGNAME` (GNUTAR long linkname) entry, `Tarball::Entry::Type::PAXDATA` (PAX header) entry.
 class Tarball::Entity
   include Comparable(self)
 
@@ -17,6 +17,7 @@ class Tarball::Entity
   @body : Entry?
   @long_name : String?
   @long_linkname : String?
+  @pax_data = Hash(String, String).new
 
   # :nodoc:
   def type
@@ -38,6 +39,8 @@ class Tarball::Entity
       set_long_name(entry)
     when .longlinkname?
       set_long_linkname(entry)
+    when .paxdata?
+      set_pax_data(entry)
     else
       set_entity_body(entry)
     end
@@ -79,6 +82,10 @@ class Tarball::Entity
     type.symlink?
   end
 
+  private def set_pax_data(entry : Entry)
+    @pax_data = entry.pax_data
+  end
+
   private def set_entity_body(entry : Entry)
     raise EntityError.new("Entity already exist.") if has_body?
     @body = entry
@@ -104,29 +111,51 @@ class Tarball::Entity
 
   # Returns file or directory name of this entity.
   def name
-    if body.header.gnutar?
-      @long_name || body.header.name
-    else
-      String.build do |str|
-        if body.header.posix?
-          unless body.header.prefix.empty?
-            str << body.header.prefix << '/'
-          end
-        end
-        str << body.header.name
-      end
-    end
+    over_ride = if body.format.posix?
+                  @pax_data["path"]?
+                elsif body.format.gnutar?
+                  @long_name
+                else
+                  nil
+                end
+
+    over_ride || String.build { |str|
+      str << body.header.prefix << '/' if body.header.posix? && !body.header.prefix.empty?
+      str << body.header.name
+    }
   end
 
   # Returns file or directory name that this entity links to.
   #
-  # `linkname` is only used when the entity body is Entry::Type::HARDLINK or Entry::Type::SYMLINK.
+  # `linkname` is only used when the entity body is `Entry::Type::HARDLINK` or `Entry::Type::SYMLINK`.
   def linkname
-    if body.header.gnutar?
-      @long_linkname || body.header.linkname
-    else
-      body.header.linkname
-    end
+    over_ride = if body.format.posix?
+                  @pax_data["linkpath"]?
+                elsif body.format.gnutar?
+                  @long_linkname
+                else
+                  nil
+                end
+
+    over_ride || body.header.linkname
+  end
+
+  # Returns last modified timestamp of this entity.
+  def mtime
+    over_ride = body.format.posix? ? @pax_data["mtime"]?.try { |mtime| Time.unix(mtime.to_f.to_i) } : nil
+    over_ride || body.header.mtime
+  end
+
+  # Returns owner user id of this entity.
+  def uid
+    over_ride = body.format.posix? ? @pax_data["uid"]?.try(&.to_u64) : nil
+    over_ride || body.header.uid
+  end
+
+  # Returns owner group id of this entity.
+  def gid
+    over_ride = body.format.posix? ? @pax_data["gid"]?.try(&.to_u64) : nil
+    over_ride || body.header.gid
   end
 
   # :nodoc:
@@ -171,6 +200,7 @@ class Tarball::Entity
 
   private def extract_dir(full_path : String)
     FileUtils.mkdir_p(full_path, mode: body.header.mode.to_i32)
+    set_fileinfo(full_path)
   end
 
   private def extract_file(full_path : String)
@@ -178,13 +208,21 @@ class Tarball::Entity
     File.open(full_path, "w", perm: body.header.mode.to_i32) do |file|
       body.write_content(file)
     end
+    set_fileinfo(full_path)
   end
 
   private def extract_symlink(full_path : String, link_path : String)
     FileUtils.ln_s(link_path, full_path)
+    set_fileinfo(full_path)
   end
 
   private def extract_hardlink(full_path : String, link_path : String)
     FileUtils.ln(link_path, full_path)
+    set_fileinfo(full_path)
+  end
+
+  private def set_fileinfo(full_path : String)
+    File.touch(full_path, mtime)
+    File.chown(full_path, uid: uid, gid: gid)
   end
 end
