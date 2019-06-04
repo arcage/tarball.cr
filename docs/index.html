@@ -100,17 +100,13 @@
 
 <h2>Installation</h2>
 
-<ol><li>Add the dependency to your <code>shard.yml</code>:</li></ol>
+<p>Add the dependency to your <code>shard.yml</code>:</p>
 
-<p><code></code>`yaml
-   dependencies:</p>
+<pre><code class="language-yaml">dependencies:
+  tarball:
+    github: arcage/tarball.cr</code></pre>
 
-<pre><code> tarball:
-   github: arcage<span class="s">/tarball.cr</code></pre>
-
-<p><code></code>`</p>
-
-<ol><li>Run <code>shards install</code></li></ol>
+<p>Then, run <code>shards install</code></p>
 
 <h2>Usage</h2>
 
@@ -136,6 +132,10 @@
 <span class="t">Tarball</span>.open_gz(<span class="s">&quot;archive.tar.gz&quot;</span>) <span class="k">do</span> <span class="o">|</span>tar<span class="o">|</span>
   <span class="c"># ...</span>
 <span class="k">end</span></code></pre>
+
+<h2>API Documents</h2>
+
+<ul><li><a href="http://www.denchu.org/tarball.cr/" target="_blank">http://www.denchu.org/tarball.cr/</a></li></ul>
 
 <h2>Contributors</h2>
 

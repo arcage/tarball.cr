@@ -15,15 +15,15 @@ Supports gzipped tar archive file.
 
 ## Installation
 
-1. Add the dependency to your `shard.yml`:
+Add the dependency to your `shard.yml`:
 
-   ```yaml
-   dependencies:
-     tarball:
-       github: arcage/tarball.cr
-   ```
+```yaml
+dependencies:
+  tarball:
+    github: arcage/tarball.cr
+```
 
-2. Run `shards install`
+Then, run `shards install`
 
 ## Usage
 
@@ -51,6 +51,9 @@ Tarball.open_gz("archive.tar.gz") do |tar|
   # ...
 end
 ```
+## API Documents
+
+- [http://www.denchu.org/tarball.cr/](http://www.denchu.org/tarball.cr/)
 
 ## Contributors
 
