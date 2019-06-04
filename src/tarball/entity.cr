@@ -34,8 +34,6 @@ class Tarball::Entity
   # Adds tar file entry to this entity.
   def add_entry(entry : Entry)
     case entry.type
-    when .unsupported?
-      raise EntityError.new("Unsupported entry type '#{entry.header.typeflag}'.")
     when .longname?
       set_long_name(entry)
     when .longlinkname?
@@ -176,6 +174,7 @@ class Tarball::Entity
   end
 
   private def extract_file(full_path : String)
+    FileUtils.mkdir_p(File.dirname(full_path))
     File.open(full_path, "w", perm: body.header.mode.to_i32) do |file|
       body.write_content(file)
     end
