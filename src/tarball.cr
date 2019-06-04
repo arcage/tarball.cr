@@ -1,5 +1,3 @@
-# Reading tar archive file.
-#
 # ```crystal
 # require "tarball"
 #
@@ -7,7 +5,7 @@
 # Tarball.extract_all("archive.tar", "data")
 # ```
 module Tarball
-  VERSION = "0.1.2"
+  VERSION = "0.1.3"
 
   # :nodoc:
   class Error < Exception; end
@@ -23,6 +21,9 @@ module Tarball
 
   # :nodoc:
   class EntityError < Error; end
+
+  # :nodoc:
+  class PaxdataError < Error; end
 
   BLOCK_SIZE = 512
 
@@ -54,7 +55,7 @@ module Tarball
   end
 
   # Opens gzipped tar archive file and yields given block.
-  def self.open(archive_file : String, &block)
+  def self.open_gz(archive_file : String, &block)
     archive = GzArchive.open(archive_file)
     yield archive
     archive.close

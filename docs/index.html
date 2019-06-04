@@ -41,8 +41,18 @@
       
         <ul>
   
-  <li class=" " data-id="github.com/arcage/tarball.cr/Tarball/Archive" data-name="tarball::archive">
+  <li class="parent " data-id="github.com/arcage/tarball.cr/Tarball/Archive" data-name="tarball::archive">
       <a href="Tarball/Archive.html">Archive</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/arcage/tarball.cr/Tarball/Archive/Format" data-name="tarball::archive::format">
+      <a href="Tarball/Archive/Format.html">Format</a>
+      
+    </li>
+  
+</ul>
+
       
     </li>
   
@@ -90,11 +100,13 @@
 <div class="main-content">
 <h1>TAR archive reader for Crystal</h1>
 
-<p>This shard makes you to read the TAR archive files(POSIX ustar format and some functions in GNUTAR fomat). No external library needed. This is written in pure Crystal.</p>
+<p>This shard makes you to read the TAR archive files(POSIX ustar format and some functions in GNUTAR fomat).</p>
+
+<p>No external library needed. This is written in pure Crystal.</p>
 
 <p>In this version, following entry types are supported:</p>
 
-<ul><li>Regular file (typeflag: <code>'\0'</code> or <code>'0'</code>)</li><li>Hardlink (typeflag: <code>'1'</code>)</li><li>Symlink (typeflag: <code>'2'</code>)</li><li>Directory (typeflag: <code>'5'</code>)</li><li>GNU long path name (typeflag: <code>'L'</code>)</li><li>GNU long link name (typeflag: <code>'K'</code>)</li></ul>
+<ul><li>Regular file (typeflag: <code>'\0'</code> or <code>'0'</code>)</li><li>Hardlink (typeflag: <code>'1'</code>)</li><li>Symlink (typeflag: <code>'2'</code>)</li><li>Directory (typeflag: <code>'5'</code>)</li><li>PAX data (typeflag: <code>'x'</code>) (<strong>mtime</strong>, <strong>path</strong>, <strong>linkpath</strong>, <strong>uid</strong>, <strong>gid</strong>)</li><li>GNU long path name (typeflag: <code>'L'</code>)</li><li>GNU long link name (typeflag: <code>'K'</code>)</li></ul>
 
 <p>Other entry type will be extract as a regular file.</p>
 
@@ -138,10 +150,6 @@
 <h2>API Documents</h2>
 
 <ul><li><a href="http://www.denchu.org/tarball.cr/" target="_blank">http://www.denchu.org/tarball.cr/</a></li></ul>
-
-<h2>ToDo</h2>
-
-<ul><li>Support PaxHeader</li></ul>
 
 <h2>Contributors</h2>
 

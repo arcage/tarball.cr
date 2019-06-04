@@ -1,6 +1,8 @@
 # TAR archive reader for Crystal
 
-This shard makes you to read the TAR archive files(POSIX ustar format and some functions in GNUTAR fomat). No external library needed. This is written in pure Crystal.
+This shard makes you to read the TAR archive files(POSIX ustar format and some functions in GNUTAR fomat).
+
+No external library needed. This is written in pure Crystal.
 
 In this version, following entry types are supported:
 
@@ -8,6 +10,7 @@ In this version, following entry types are supported:
 - Hardlink (typeflag: `'1'`)
 - Symlink (typeflag: `'2'`)
 - Directory (typeflag: `'5'`)
+- PAX data (typeflag: `'x'`) (**mtime**, **path**, **linkpath**, **uid**, **gid**)
 - GNU long path name (typeflag: `'L'`)
 - GNU long link name (typeflag: `'K'`)
 
@@ -57,10 +60,6 @@ end
 ## API Documents
 
 - [http://www.denchu.org/tarball.cr/](http://www.denchu.org/tarball.cr/)
-
-## ToDo
-
-- Support PaxHeader
 
 ## Contributors
 

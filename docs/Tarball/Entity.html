@@ -41,8 +41,18 @@
       
         <ul>
   
-  <li class=" " data-id="github.com/arcage/tarball.cr/Tarball/Archive" data-name="tarball::archive">
+  <li class="parent " data-id="github.com/arcage/tarball.cr/Tarball/Archive" data-name="tarball::archive">
       <a href="../Tarball/Archive.html">Archive</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/arcage/tarball.cr/Tarball/Archive/Format" data-name="tarball::archive::format">
+      <a href="../Tarball/Archive/Format.html">Format</a>
+      
+    </li>
+  
+</ul>
+
       
     </li>
   
@@ -104,11 +114,11 @@
 
   <p>File system objects(regular files, directries or links) in the tar archive.</p>
 
-<p>Tarball::Entity object must contain an entity body entry with one of following entry types:</p>
+<p><code><a href="../Tarball/Entity.html">Tarball::Entity</a></code> object must contain an entity body entry with one of following entry types:</p>
 
-<ul><li>Tarball::Entry::Type::FILE (Regular file)</li><li>Tarball::Entry::Type::HARDLINK (Hardlink)</li><li>Tarball::Entry::Type::SYMLINK (Symlink)</li><li>Tarball::Entry::Type::DIRECTORY (Directory)</li></ul>
+<ul><li><code><a href="../Tarball/Entry/Type.html#FILE">Tarball::Entry::Type::FILE</a></code> (Regular file)</li><li><code><a href="../Tarball/Entry/Type.html#HARDLINK">Tarball::Entry::Type::HARDLINK</a></code> (Hardlink)</li><li><code><a href="../Tarball/Entry/Type.html#SYMLINK">Tarball::Entry::Type::SYMLINK</a></code> (Symlink)</li><li><code><a href="../Tarball/Entry/Type.html#DIRECTORY">Tarball::Entry::Type::DIRECTORY</a></code> (Directory)</li></ul>
 
-<p>It can contain one each of Tarball::Entry::Type::LONGNAME (GNUTAR long name) entry and a Tarball::Entry::Type::LONGNAME (GNUTAR long linkname) entry.</p>
+<p>It can contain one each of <code><a href="../Tarball/Entry/Type.html#LONGNAME">Tarball::Entry::Type::LONGNAME</a></code> (GNUTAR long name) entry, a <code><a href="../Tarball/Entry/Type.html#LONGNAME">Tarball::Entry::Type::LONGNAME</a></code> (GNUTAR long linkname) entry, <code><a href="../Tarball/Entry/Type.html#PAXDATA">Tarball::Entry::Type::PAXDATA</a></code> (PAX header) entry.</p>
 
 
 
@@ -133,7 +143,7 @@
   <h2>Defined in:</h2>
   
     
-      <a href="https://github.com/arcage/tarball.cr/blob/14207009f5ab10c4548349b722bf077308373747/src/tarball/entity.cr#L13" target="_blank">
+      <a href="https://github.com/arcage/tarball.cr/blob/953fab212398cbe24f74ab07739e68c502a5fcd1/src/tarball/entity.cr#L13" target="_blank">
         tarball/entity.cr
       </a>
     
@@ -185,6 +195,13 @@
       </li>
     
       <li class="entry-summary">
+        <a href="#gid-instance-method" class="signature"><strong>#gid</strong></a>
+        
+          <div class="summary"><p>Returns owner group id of this entity.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
         <a href="#hardlink%3F-instance-method" class="signature"><strong>#hardlink?</strong></a>
         
           <div class="summary"><p>Returns <code>true</code> when self is a hardlink.</p></div>
@@ -220,6 +237,13 @@
       </li>
     
       <li class="entry-summary">
+        <a href="#mtime-instance-method" class="signature"><strong>#mtime</strong></a>
+        
+          <div class="summary"><p>Returns last modified timestamp of this entity.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
         <a href="#name-instance-method" class="signature"><strong>#name</strong></a>
         
           <div class="summary"><p>Returns file or directory name of this entity.</p></div>
@@ -230,6 +254,13 @@
         <a href="#symlink%3F-instance-method" class="signature"><strong>#symlink?</strong></a>
         
           <div class="summary"><p>Returns <code>true</code> when self is a symlink.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#uid-instance-method" class="signature"><strong>#uid</strong></a>
+        
+          <div class="summary"><p>Returns owner user id of this entity.</p></div>
         
       </li>
     
@@ -298,7 +329,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/arcage/tarball.cr/blob/14207009f5ab10c4548349b722bf077308373747/src/tarball/entity.cr#L26" target="_blank">View source</a>]
+          [<a href="https://github.com/arcage/tarball.cr/blob/953fab212398cbe24f74ab07739e68c502a5fcd1/src/tarball/entity.cr#L27" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -316,7 +347,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/arcage/tarball.cr/blob/14207009f5ab10c4548349b722bf077308373747/src/tarball/entity.cr#L35" target="_blank">View source</a>]
+          [<a href="https://github.com/arcage/tarball.cr/blob/953fab212398cbe24f74ab07739e68c502a5fcd1/src/tarball/entity.cr#L36" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -334,7 +365,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/arcage/tarball.cr/blob/14207009f5ab10c4548349b722bf077308373747/src/tarball/entity.cr#L139" target="_blank">View source</a>]
+          [<a href="https://github.com/arcage/tarball.cr/blob/953fab212398cbe24f74ab07739e68c502a5fcd1/src/tarball/entity.cr#L168" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -352,7 +383,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/arcage/tarball.cr/blob/14207009f5ab10c4548349b722bf077308373747/src/tarball/entity.cr#L68" target="_blank">View source</a>]
+          [<a href="https://github.com/arcage/tarball.cr/blob/953fab212398cbe24f74ab07739e68c502a5fcd1/src/tarball/entity.cr#L71" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -370,7 +401,25 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/arcage/tarball.cr/blob/14207009f5ab10c4548349b722bf077308373747/src/tarball/entity.cr#L63" target="_blank">View source</a>]
+          [<a href="https://github.com/arcage/tarball.cr/blob/953fab212398cbe24f74ab07739e68c502a5fcd1/src/tarball/entity.cr#L66" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="gid-instance-method">
+      <div class="signature">
+        
+        def <strong>gid</strong>
+
+        <a class="method-permalink" href="#gid-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Returns owner group id of this entity.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/arcage/tarball.cr/blob/953fab212398cbe24f74ab07739e68c502a5fcd1/src/tarball/entity.cr#L156" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -388,7 +437,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/arcage/tarball.cr/blob/14207009f5ab10c4548349b722bf077308373747/src/tarball/entity.cr#L73" target="_blank">View source</a>]
+          [<a href="https://github.com/arcage/tarball.cr/blob/953fab212398cbe24f74ab07739e68c502a5fcd1/src/tarball/entity.cr#L76" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -406,7 +455,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/arcage/tarball.cr/blob/14207009f5ab10c4548349b722bf077308373747/src/tarball/entity.cr#L48" target="_blank">View source</a>]
+          [<a href="https://github.com/arcage/tarball.cr/blob/953fab212398cbe24f74ab07739e68c502a5fcd1/src/tarball/entity.cr#L51" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -424,7 +473,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/arcage/tarball.cr/blob/14207009f5ab10c4548349b722bf077308373747/src/tarball/entity.cr#L58" target="_blank">View source</a>]
+          [<a href="https://github.com/arcage/tarball.cr/blob/953fab212398cbe24f74ab07739e68c502a5fcd1/src/tarball/entity.cr#L61" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -442,7 +491,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/arcage/tarball.cr/blob/14207009f5ab10c4548349b722bf077308373747/src/tarball/entity.cr#L53" target="_blank">View source</a>]
+          [<a href="https://github.com/arcage/tarball.cr/blob/953fab212398cbe24f74ab07739e68c502a5fcd1/src/tarball/entity.cr#L56" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -457,12 +506,30 @@
       
         <div class="doc"><p>Returns file or directory name that this entity links to.</p>
 
-<p><code><a href="../Tarball/Entity.html#linkname-instance-method">#linkname</a></code> is only used when the entity body is Entry::Type::HARDLINK or Entry::Type::SYMLINK.</p></div>
+<p><code><a href="../Tarball/Entity.html#linkname-instance-method">#linkname</a></code> is only used when the entity body is <code><a href="../Tarball/Entry/Type.html#HARDLINK">Entry::Type::HARDLINK</a></code> or <code><a href="../Tarball/Entry/Type.html#SYMLINK">Entry::Type::SYMLINK</a></code>.</p></div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/arcage/tarball.cr/blob/14207009f5ab10c4548349b722bf077308373747/src/tarball/entity.cr#L124" target="_blank">View source</a>]
+          [<a href="https://github.com/arcage/tarball.cr/blob/953fab212398cbe24f74ab07739e68c502a5fcd1/src/tarball/entity.cr#L131" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="mtime-instance-method">
+      <div class="signature">
+        
+        def <strong>mtime</strong>
+
+        <a class="method-permalink" href="#mtime-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Returns last modified timestamp of this entity.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/arcage/tarball.cr/blob/953fab212398cbe24f74ab07739e68c502a5fcd1/src/tarball/entity.cr#L144" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -480,7 +547,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/arcage/tarball.cr/blob/14207009f5ab10c4548349b722bf077308373747/src/tarball/entity.cr#L106" target="_blank">View source</a>]
+          [<a href="https://github.com/arcage/tarball.cr/blob/953fab212398cbe24f74ab07739e68c502a5fcd1/src/tarball/entity.cr#L113" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -498,7 +565,25 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/arcage/tarball.cr/blob/14207009f5ab10c4548349b722bf077308373747/src/tarball/entity.cr#L78" target="_blank">View source</a>]
+          [<a href="https://github.com/arcage/tarball.cr/blob/953fab212398cbe24f74ab07739e68c502a5fcd1/src/tarball/entity.cr#L81" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="uid-instance-method">
+      <div class="signature">
+        
+        def <strong>uid</strong>
+
+        <a class="method-permalink" href="#uid-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Returns owner user id of this entity.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/arcage/tarball.cr/blob/953fab212398cbe24f74ab07739e68c502a5fcd1/src/tarball/entity.cr#L150" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -516,7 +601,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/arcage/tarball.cr/blob/14207009f5ab10c4548349b722bf077308373747/src/tarball/entity.cr#L161" target="_blank">View source</a>]
+          [<a href="https://github.com/arcage/tarball.cr/blob/953fab212398cbe24f74ab07739e68c502a5fcd1/src/tarball/entity.cr#L190" target="_blank">View source</a>]
         
       </div>
     </div>

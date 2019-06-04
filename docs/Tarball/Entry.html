@@ -41,8 +41,18 @@
       
         <ul>
   
-  <li class=" " data-id="github.com/arcage/tarball.cr/Tarball/Archive" data-name="tarball::archive">
+  <li class="parent " data-id="github.com/arcage/tarball.cr/Tarball/Archive" data-name="tarball::archive">
       <a href="../Tarball/Archive.html">Archive</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/arcage/tarball.cr/Tarball/Archive/Format" data-name="tarball::archive::format">
+      <a href="../Tarball/Archive/Format.html">Format</a>
+      
+    </li>
+  
+</ul>
+
       
     </li>
   
@@ -120,7 +130,7 @@
   <h2>Defined in:</h2>
   
     
-      <a href="https://github.com/arcage/tarball.cr/blob/14207009f5ab10c4548349b722bf077308373747/src/tarball/entry.cr#L2" target="_blank">
+      <a href="https://github.com/arcage/tarball.cr/blob/953fab212398cbe24f74ab07739e68c502a5fcd1/src/tarball/entry.cr#L2" target="_blank">
         tarball/entry.cr
       </a>
     
@@ -156,9 +166,16 @@
       </li>
     
       <li class="entry-summary">
+        <a href="#format-instance-method" class="signature"><strong>#format</strong></a>
+        
+          <div class="summary"><p>Returns entry format.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
         <a href="#header%3ATarball%3A%3AHeader-instance-method" class="signature"><strong>#header</strong> : Tarball::Header</a>
         
-          <div class="summary"><p>Returns Header object of this entiry</p></div>
+          <div class="summary"><p>Returns <code><a href="../Tarball/Header.html">Tarball::Header</a></code> object of this entiry</p></div>
         
       </li>
     
@@ -170,9 +187,16 @@
       </li>
     
       <li class="entry-summary">
+        <a href="#pax_data-instance-method" class="signature"><strong>#pax_data</strong></a>
+        
+          <div class="summary"><p>Returns PAX data.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
         <a href="#type-instance-method" class="signature"><strong>#type</strong></a>
         
-          <div class="summary"><p>Returns type of self.</p></div>
+          <div class="summary"><p>Returns entry type.</p></div>
         
       </li>
     
@@ -227,7 +251,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/arcage/tarball.cr/blob/14207009f5ab10c4548349b722bf077308373747/src/tarball/entry.cr#L18" target="_blank">View source</a>]
+          [<a href="https://github.com/arcage/tarball.cr/blob/953fab212398cbe24f74ab07739e68c502a5fcd1/src/tarball/entry.cr#L19" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -252,7 +276,25 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/arcage/tarball.cr/blob/14207009f5ab10c4548349b722bf077308373747/src/tarball/entry.cr#L25" target="_blank">View source</a>]
+          [<a href="https://github.com/arcage/tarball.cr/blob/953fab212398cbe24f74ab07739e68c502a5fcd1/src/tarball/entry.cr#L26" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="format-instance-method">
+      <div class="signature">
+        
+        def <strong>format</strong>
+
+        <a class="method-permalink" href="#format-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Returns entry format.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/arcage/tarball.cr/blob/953fab212398cbe24f74ab07739e68c502a5fcd1/src/tarball/entry.cr#L41" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -265,12 +307,12 @@
         <a class="method-permalink" href="#header%3ATarball%3A%3AHeader-instance-method">#</a>
       </div>
       
-        <div class="doc"><p>Returns Header object of this entiry</p></div>
+        <div class="doc"><p>Returns <code><a href="../Tarball/Header.html">Tarball::Header</a></code> object of this entiry</p></div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/arcage/tarball.cr/blob/14207009f5ab10c4548349b722bf077308373747/src/tarball/entry.cr#L14" target="_blank">View source</a>]
+          [<a href="https://github.com/arcage/tarball.cr/blob/953fab212398cbe24f74ab07739e68c502a5fcd1/src/tarball/entry.cr#L15" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -288,7 +330,27 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/arcage/tarball.cr/blob/14207009f5ab10c4548349b722bf077308373747/src/tarball/entry.cr#L30" target="_blank">View source</a>]
+          [<a href="https://github.com/arcage/tarball.cr/blob/953fab212398cbe24f74ab07739e68c502a5fcd1/src/tarball/entry.cr#L31" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="pax_data-instance-method">
+      <div class="signature">
+        
+        def <strong>pax_data</strong>
+
+        <a class="method-permalink" href="#pax_data-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Returns PAX data.</p>
+
+<p>When self is not a <code><a href="../Tarball/Entry/Type.html#PAXDATA">Tarball::Entry::Type::PAXDATA</a></code></p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/arcage/tarball.cr/blob/953fab212398cbe24f74ab07739e68c502a5fcd1/src/tarball/entry.cr#L65" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -301,12 +363,12 @@
         <a class="method-permalink" href="#type-instance-method">#</a>
       </div>
       
-        <div class="doc"><p>Returns type of self.</p></div>
+        <div class="doc"><p>Returns entry type.</p></div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/arcage/tarball.cr/blob/14207009f5ab10c4548349b722bf077308373747/src/tarball/entry.cr#L35" target="_blank">View source</a>]
+          [<a href="https://github.com/arcage/tarball.cr/blob/953fab212398cbe24f74ab07739e68c502a5fcd1/src/tarball/entry.cr#L36" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -324,7 +386,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/arcage/tarball.cr/blob/14207009f5ab10c4548349b722bf077308373747/src/tarball/entry.cr#L40" target="_blank">View source</a>]
+          [<a href="https://github.com/arcage/tarball.cr/blob/953fab212398cbe24f74ab07739e68c502a5fcd1/src/tarball/entry.cr#L46" target="_blank">View source</a>]
         
       </div>
     </div>

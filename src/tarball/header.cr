@@ -9,6 +9,7 @@ class Tarball::Header
     '5'  => Entry::Type::DIRECTORY,
     'L'  => Entry::Type::LONGNAME,
     'K'  => Entry::Type::LONGLINKNAME,
+    'x'  => Entry::Type::PAXDATA,
   }
 
   # :nodoc:
@@ -48,7 +49,7 @@ class Tarball::Header
     realsize:  483..494,
   }
 
-  # Creates Header object from byte data.
+  # Creates `Tarball::Header` object from byte data.
   #
   # `data` must be 512 bytes.
   def initialize(@data : Bytes)
@@ -116,6 +117,17 @@ class Tarball::Header
   # Returns entiry type.
   def type
     TYPES[typeflag]? || Entry::Type::UNSUPPORTED
+  end
+
+  # Returns entry format.
+  def format
+    if posix?
+      Archive::Format::POSIX
+    elsif gnutar?
+      Archive::Format::GNUTAR
+    else
+      Archive::Format::OLD
+    end
   end
 
   @isextended : Bool?

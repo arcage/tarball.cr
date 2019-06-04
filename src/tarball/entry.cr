@@ -7,10 +7,11 @@ class Tarball::Entry
     SYMLINK
     LONGNAME
     LONGLINKNAME
+    PAXDATA
     UNSUPPORTED  = Int32::MAX
   end
 
-  # Returns Header object of this entiry
+  # Returns `Tarball::Header` object of this entiry
   getter header
 
   @pos : (Int32 | Int64)
@@ -31,9 +32,14 @@ class Tarball::Entry
     content_pos + header.content_blocks * BLOCK_SIZE
   end
 
-  # Returns type of self.
+  # Returns entry type.
   def type
     header.type
+  end
+
+  # Returns entry format.
+  def format
+    header.format
   end
 
   # Writes content data to IO.
@@ -51,5 +57,17 @@ class Tarball::Entry
       remains -= BLOCK_SIZE
     end
     nil
+  end
+
+  # Returns PAX data.
+  #
+  # When self is not a `Tarball::Entry::Type::PAXDATA`
+  def pax_data
+    raise EntryError.new("Not a PAXHEADER entry") unless type.paxdata?
+    pos = @io.pos
+    buffer = IO::Memory.new(@header.size)
+    write_content(buffer)
+    buffer.rewind
+    Paxdata.parse(buffer)
   end
 end

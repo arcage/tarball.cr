@@ -1,7 +1,14 @@
 # Tar archive file object.
 class Tarball::Archive
+  enum Format
+    OLD
+    POSIX
+    GNUTAR
+  end
+
   @closed = false
   @entities = {} of String => Entity
+  @format : Format?
 
   # Open tar archive from filename.
   def self.open(archive_file : String)
@@ -25,8 +32,14 @@ class Tarball::Archive
     @entities[filename]?
   end
 
+  # Returns list of entities in archive.
   def entities
     @entities.values
+  end
+
+  # Returns file format(`Tarball::Archive::Format`) of this archive
+  def format
+    @format.not_nil!
   end
 
   # Returns list of included filenames.
@@ -54,15 +67,20 @@ class Tarball::Archive
     @closed = true
   end
 
-  def read_archive
+  private def read_archive
     entity = nil
     loop do
       pos = @io.pos
       block = Tarball.read_block(@io)
       break if block == END_OF_ARCHIVE && Tarball.read_block(@io) == END_OF_ARCHIVE
+      entity ||= Entity.new
       @io.pos = pos
       entry = Entry.new(@io)
-      entity ||= Entity.new
+      if format = @format
+        raise ArchiveError.new("Multiple entry formats are intermingled.") unless format == entry.format
+      else
+        @format = entry.format
+      end
       entity.add_entry(entry)
       if entity.has_body?
         raise ArchiveError.new("Duplicated file name '#{entity.name}' exists.") if @entities.has_key?(entity.name)
