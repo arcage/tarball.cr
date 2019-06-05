@@ -14,9 +14,9 @@ In this version, following entry types are supported:
 - GNU long path name (typeflag: `'L'`)
 - GNU long link name (typeflag: `'K'`)
 
-Other entry type will be extract as a regular file.
+Other entry type will be extracted as a regular file.
 
-Supports gzipped tar archive file.
+Supporting gzipped tar archive file.
 
 ## Installation
 
