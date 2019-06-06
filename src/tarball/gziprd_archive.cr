@@ -3,7 +3,7 @@ require "gzip"
 # Gzipped tar archive file object.
 class Tarball::GzArchive < Tarball::Archive
   private def initialize(archive_file : String)
-    p @io = File.tempfile("tarball.cr", ".tar")
+    @io = File.tempfile("tarball.cr", ".tar")
     bytes = Bytes.new(1024)
     Gzip::Reader.open(archive_file) do |gz|
       loop do
