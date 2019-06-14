@@ -164,12 +164,6 @@ class Tarball::Entity
     nil
   end
 
-  # Writes content data of the entity to IO.
-  def content(io : IO)
-    body.content(io)
-    nil
-  end
-
   # :nodoc:
   def extract(dir = ".")
     full_path = File.expand_path(name, dir)
@@ -189,6 +183,7 @@ class Tarball::Entity
   # Writes content data to IO.
   def write_content(io : IO)
     body.write_content(io)
+    nil
   end
 
   # :nodoc:
@@ -223,6 +218,5 @@ class Tarball::Entity
 
   private def set_fileinfo(full_path : String)
     File.touch(full_path, mtime)
-    File.chown(full_path, uid: uid, gid: gid)
   end
 end

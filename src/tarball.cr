@@ -5,7 +5,7 @@
 # Tarball.extract_all("archive.tar", "data")
 # ```
 module Tarball
-  VERSION = "0.1.3"
+  VERSION = "0.1.4"
 
   # :nodoc:
   class Error < Exception; end

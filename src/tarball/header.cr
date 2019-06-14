@@ -1,3 +1,5 @@
+require "big"
+
 # Header object of entries included in tar file.
 class Tarball::Header
   # :nodoc:
@@ -185,6 +187,23 @@ class Tarball::Header
   end
 
   private def as_number(bytes : Bytes) : UInt64
+    if bytes[0] & 128u64 > 0
+      as_number_by_bits(bytes)
+    else
+      as_number_by_octs(bytes)
+    end
+  end
+
+  private def as_number_by_bits(bytes)
+    bytes[0] = bytes[0] & 127u8
+    num = BigInt.new(0)
+    (0...bytes.size).each do |i|
+      num = (num << 8) + bytes[i]
+    end
+    num.to_u64
+  end
+
+  private def as_number_by_octs(bytes)
     str = as_string(bytes)
     if str.empty?
       0u64
@@ -245,5 +264,9 @@ class Tarball::Header
     @data[GNUTAR[field]]
   rescue KeyError
     raise HeaderError.new("#{field} field not found")
+  end
+
+  def to_bytes
+    @data
   end
 end
